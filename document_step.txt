@@ -1,0 +1,16 @@
+Benefits of events in Laravel.
+---------------------------------
+Events serve as a great way to decouple various aspects of your application, since a single event can have multiple listeners that do not depend on each other. 
+
+
+composer create-project laravel/laravel example-app
+1.  php artisan make:event SendMail
+2.  php artisan make:listener SendMailFired --event="SendMail"
+3.  app/Providers/EventServiceProvider.php ->add class
+
+=======================================================================
+Laravel Observers 
+-----------------------
+Laravel Observers are used to group event listeners for a model eloquent. Laravel Observers will listener event for model eloquent method like create, update and delete.
+
+php artisan make:observer ProductObserver --model=Product
